@@ -9,12 +9,17 @@ while command != "End":
         current_value = targets[index]
         targets[index] = -1
         targets_shot += 1
+
         for target in range(len(targets)):
             if targets[target] != -1:
                 if targets[target] > current_value:
                     targets[target] -= current_value
                 else:
                     targets[target] += current_value
+        # targets = [target - current_value if target != -1 and target > current_value
+        #            else target + current_value if target != -1 else target for target in targets]
+        #   also works with comprehension
+
 
     command = input()
 
